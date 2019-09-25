@@ -166,7 +166,7 @@ fi
 
 # 创建软链
 ENV_OP_PATH=/data/openpilot
-if [ -d "${ENV_OP_PATH}" ]; then
+if [ ! -L "${ENV_OP_PATH}" ]; then
     ms=`date +%s_%N`
     mv "${ENV_OP_PATH}" "${PATH_FORK}/backup_${ms}"
 fi
