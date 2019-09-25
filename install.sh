@@ -185,5 +185,26 @@ if [[ "${is_make_fork}" == "N" ]];then
   exit 0
 fi
 
+# 编译
 cd ${ENV_OP_PATH} && make
+if [[ "$?" -ne "0" ]]; then
+  echo -e "\n${CFAILURE}openpilot 编译失败，请检查后重试${CEND}"
+  exit 1
+fi
+
+# 是否需要重启
+read -e -p "${CWARNING}是否重启 EON${CEND} ${CRED}[Y/n]${CEND}：" is_reboot
+is_reboot=${is_reboot:-y}
+is_reboot=`echo ${is_reboot} | tr 'yn' 'YN'`
+
+if [[ "${is_reboot}" == "N" ]];then
+  echo -e "${CSUCCESS}\n操作完成！\n${CEND}"
+  exit 0
+fi
+
+echo -e "${CSUCCESS}\n系统重启中......\n${CEND}"
+if [[ -f "/comma.sh" ]];then
+  reboot
+fi
 exit 0
+
