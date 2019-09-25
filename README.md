@@ -13,7 +13,7 @@ openpilot 安装工具（开发测试中）
 
 ```bash
 # 运行安装脚本
-bash <(curl -s -L https://git.io/JeGcT) 
+bash <(curl -s -L https://git.io/op_install.sh) 
 ```
 
 
@@ -36,6 +36,6 @@ adb shell
 source <(curl -s -L http://git.io/op_bash_init.sh)
 
 # 运行安装脚本
-bash <(curl -s -L https://git.io/JeGcT) 
+bash <(curl -s -L https://git.io/op_install.sh) 
 ```
 
