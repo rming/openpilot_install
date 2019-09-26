@@ -24,4 +24,4 @@ bash /sdcard/op_install.sh
 
 ### 演示视频
 
-<iframe src="//player.bilibili.com/player.html?aid=69034797&cid=119645754&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<a href="https://www.bilibili.com/video/av69034797/" rel="noopener"><img src="https://i0.hdslb.com/bfs/archive/af89a0ea7ec2396de5246c86f58c30734a46e0c7.jpg_1280x800.jpg"></a>
