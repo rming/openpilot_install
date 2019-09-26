@@ -35,7 +35,7 @@ GIT_ARNE182=https://gitee.com/afaaa/arne182.git
 BRANCH_OPENPILOT=("-" "devel" "release2")
 BRANCH_DRAGONPILOT=("-" "0.6.4-zhs" "0.6.4-zht" "0.6.4-en" "devel-zhs" "devel-zht" "devel-en" )
 BRANCH_GERNBY=("-" "kegman-plusGernby-0.6.2" "poly-center-062" "poly-center-063")
-BRANCH_KEGMAN=("-" "kegman-0.6.4" "kegman-0.6.3" "kegman-0.6.2" "kegman-0.5.9" "kegman-0.5.8-gold")
+BRANCH_KEGMAN=("-" "kegman-0.6.4" "kegman-0.6.3" "kegman-0.6.2" "kegman-plusZorro-0.6.4")
 BRANCH_ARNE182=("-" "release2" "064-clean" "mapd")
 
 # 构建结果文件
