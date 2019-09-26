@@ -4,14 +4,14 @@
 # Notes: openpilot install script
 #
 # Project home page:
-#       http://doc.sdut.me/openpilot_install.html
+#       http://doc.sdut.me/cn/openpilot_install.html
 
 clear
 printf "
-####################################################
-#    openpilot 安装工具                             #
-#    更多信息 http://doc.sdut.me/                   #
-####################################################
+##############################################################
+#    openpilot 一键安装脚本                                   #
+#    更多信息 http://doc.sdut.me/cn/openpilot_install.html    #
+##############################################################
 "
 
 
