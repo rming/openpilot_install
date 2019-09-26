@@ -1,6 +1,5 @@
-## openpilot 安装工具
+## Openpilot 一键安装脚本
 
-openpilot 安装工具
 
 ### 使用教程
 
