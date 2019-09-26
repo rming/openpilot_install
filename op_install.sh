@@ -153,8 +153,13 @@ fi
 
 echo -e "===========================\n"
 
+# 是否首次编译
+if [[ ! -f "${OP_PATH}/${FILE_UI_BUILD}" ]];then
+  echo -e "${CWARNING}首次编译大约需要 25 分钟\n${CEND}"
+fi
+
 # 是否需要切换到当前选择的分支
-read -e -p "${CWARNING}是否切换到该分支${CEND} ${CRED}[Y/n]${CEND}：" is_change_fork
+read -e -p "${CWARNING}是否切换分支并编译${CEND} ${CRED}[Y/n]${CEND}：" is_change_fork
 is_change_fork=${is_change_fork:-y}
 is_change_fork=`echo ${is_change_fork} | tr 'yn' 'YN'`
 
@@ -174,23 +179,16 @@ rm -f ${ENV_OP_PATH}
 ln -sf ${OP_PATH} ${ENV_OP_PATH}
 
 
-# 是否需要编译
-echo -e "\n"
-read -e -p "${CWARNING}是否编译该分支${CEND} ${CRED}[Y/n]${CEND}：" is_make_fork
-is_make_fork=${is_make_fork:-y}
-is_make_fork=`echo ${is_make_fork} | tr 'yn' 'YN'`
-
-if [[ "${is_make_fork}" == "N" ]];then
-  echo -e "${CSUCCESS}\n操作完成！\n${CEND}"
-  exit 0
-fi
-
+# 等待编译提示
+echo -e "${CBLUE}\n请耐心等待......\n${CEND}"
 # 编译
 cd ${ENV_OP_PATH} && make
 if [[ "$?" -ne "0" ]]; then
   echo -e "\n${CFAILURE}openpilot 编译失败，请检查后重试${CEND}"
   exit 1
 fi
+
+echo -e "===========================\n"
 
 # 是否需要重启
 read -e -p "${CWARNING}是否重启 EON${CEND} ${CRED}[Y/n]${CEND}：" is_reboot
