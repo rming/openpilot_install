@@ -21,3 +21,7 @@ curl -o /sdcard/op_install.sh -L https://git.io/op_install.sh
 # 运行脚本
 bash /sdcard/op_install.sh
 ```
+
+### 演示视频
+
+<iframe src="//player.bilibili.com/player.html?aid=69034797&cid=119645754&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
