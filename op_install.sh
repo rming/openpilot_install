@@ -17,12 +17,13 @@ printf "
 
 # 配置每个 fork 文件存储位置
 PATH_FORK=/data/forks
-FORKS=("-" "openpilot" "dragonpilot" "gernby" "kegman" "arne182")
+
 PATH_OPENPILOT=${PATH_FORK}/openpilot
 PATH_DRAGONPILOT=${PATH_FORK}/dragonpilot
 PATH_GERNBY=${PATH_FORK}/gernby
 PATH_KEGMAN=${PATH_FORK}/kegman
 PATH_ARNE182=${PATH_FORK}/arne182
+PATH_OPENPILOTCN=${PATH_FORK}/openpilot-cn
 
 # 配置每个 fork 的 git 地址
 GIT_OPENPILOT=https://gitee.com/afaaa/openpilot.git
@@ -30,13 +31,7 @@ GIT_DRAGONPILOT=https://gitee.com/afaaa/dragonpilot.git
 GIT_GERNBY=https://gitee.com/afaaa/gernby.git
 GIT_KEGMAN=https://gitee.com/afaaa/kegman.git
 GIT_ARNE182=https://gitee.com/afaaa/arne182.git
-
-# 配置每个 fork 选取的 branch
-BRANCH_OPENPILOT=("-" "devel" "release2")
-BRANCH_DRAGONPILOT=("-" "0.6.4-zhs" "0.6.4-zht" "0.6.4-en" "devel-zhs" "devel-zht" "devel-en" )
-BRANCH_GERNBY=("-" "kegman-plusGernby-0.6.2" "poly-center-062" "poly-center-063")
-BRANCH_KEGMAN=("-" "kegman-0.6.4" "kegman-0.6.3" "kegman-0.6.2" "kegman-plusZorro-0.6.4")
-BRANCH_ARNE182=("-" "release2" "064-clean" "mapd")
+GIT_OPENPILOTCN=https://gitee.com/afaaa/openpilot-cn
 
 # 构建结果文件
 FILE_UI_BUILD=selfdrive/ui/ui.o
@@ -69,6 +64,29 @@ CQUESTION="$CMAGENTA"
 CWARNING="$CYELLOW"
 CMSG="$CCYAN"
 
+
+VERSION_NEOS=`cat /VERSION`
+VERSION_PY=`python --version`
+if [[ "${VERSION_NEOS}" -eq "12" ]]; then
+  echo -e "\n${CWARNING}当前系统为：NEOS ${VERSION_NEOS}（${VERSION_PY}）${CEND}"
+  FORKS=("-" "openpilot" "openpilot-cn" "dragonpilot" "kegman" "arne182")
+  BRANCH_GERNBY=("-")
+  BRANCH_OPENPILOT=("-" "devel" "release2")
+  BRANCH_DRAGONPILOT=("-" "0.6.5-zhs" "0.6.5-zht" "0.6.5-en" "devel-zhs" "devel-zht" "devel-en" )
+  BRANCH_KEGMAN=("-" "kegman-0.6.5" "kegman-plusBoschGasPress-0.6.5")
+  BRANCH_ARNE182=("-" "release3")
+  BRANCH_OPENPILOTCN=("-" "0.6.5-zhs" "devel")
+else
+  echo -e "\n${CWARNING}当前系统为：NEOS ${VERSION_NEOS}（${VERSION_PY}）${CEND}"
+  FORKS=("-" "dragonpilot" "gernby" "kegman" "arne182")
+  BRANCH_OPENPILOT=("-")
+  BRANCH_DRAGONPILOT=("-" "0.6.4-zhs" "0.6.4-zht" "0.6.4-en" "0.6.3-zhs" "0.6.3-zht" "0.6.3-en" "0.6.2-zhs" "0.6.2-zht" "0.6.2-en" "0.6.1-zhs" "0.6.1-zht" "0.6.1-en" )
+  BRANCH_GERNBY=("-" "poly-center-063" "kegman-plusGernby-0.6.2" "poly-center-062" "poly-center-063")
+  BRANCH_KEGMAN=("-" "kegman-0.6.4" "kegman-0.6.3" "kegman-0.6.2" "kegman-plusZorro-0.6.4")
+  BRANCH_ARNE182=("-" "release2" "064-clean" "mapd")
+  BRANCH_OPENPILOTCN=("-")
+fi
+
 # fork_select
 while :; do echo
   echo -e 'Fork 选择:'
@@ -84,7 +102,7 @@ while :; do echo
   else
     echo -e "===========================\n"
     FORK_L=${FORKS[$fork_select]}
-    FORK=`echo ${FORK_L} | tr 'a-z' 'A-Z'`
+    FORK=`echo ${FORK_L} | tr 'a-z' 'A-Z' | tr -d '-'` 
     break
   fi
 done
