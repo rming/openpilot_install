@@ -22,7 +22,7 @@ curl -o /sdcard/op_install.sh -L https://gitee.com/afaaa/openpilot_install/raw/m
 bash /sdcard/op_install.sh
 ```
 
-### 演示视频
+### 演示图片
 
 ![op_install](https://doc.sdut.me/files/op_install.png)
 
