@@ -24,4 +24,8 @@ bash /sdcard/op_install.sh
 
 ### 演示视频
 
+![op_install](https://doc.sdut.me/files/op_install.png)
+
+### 演示视频
+
 <a href="https://www.bilibili.com/video/av69034797/" rel="noopener"><img src="https://camo.githubusercontent.com/0a8aca6b272cdab68cc30733271100d5ec96b2a5/68747470733a2f2f69302e6864736c622e636f6d2f6266732f617263686976652f616638396130656137656332333936646535323436633836663538633330373334613436653063372e6a70675f31323830783830302e6a7067"></a>
