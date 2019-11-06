@@ -73,9 +73,9 @@ if [[ "${VERSION_NEOS}" -eq "12" ]]; then
   BRANCH_GERNBY=("-")
   BRANCH_OPENPILOT=("-" "devel" "release2")
   BRANCH_DRAGONPILOT=("-" "0.6.5-zhs" "0.6.5-zht" "0.6.5-en" "devel-zhs" "devel-zht" "devel-en" )
-  BRANCH_KEGMAN=("-" "kegman-0.6.5" "kegman-plusBoschGasPress-0.6.5")
+  BRANCH_KEGMAN=("-" "kegman-0.6.6" "kegman-plusBoschGasPress-0.6.6" "kegman-0.6.5" "kegman-plusBoschGasPress-0.6.5")
   BRANCH_ARNE182=("-" "release3")
-  BRANCH_OPENPILOTCN=("-" "0.6.5-zhs" "devel")
+  BRANCH_OPENPILOTCN=("-" "latest-zhs" "0.6.6-zhs" "0.6.5-zhs" "devel")
 else
   echo -e "\n${CWARNING}当前系统为：NEOS ${VERSION_NEOS}（${VERSION_PY}）${CEND}"
   FORKS=("-" "dragonpilot" "gernby" "kegman" "arne182")
