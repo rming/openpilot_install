@@ -72,7 +72,7 @@ if [[ "${VERSION_NEOS}" -eq "12" ]]; then
   FORKS=("-" "openpilot" "openpilot-cn" "dragonpilot" "kegman" "arne182")
   BRANCH_GERNBY=("-")
   BRANCH_OPENPILOT=("-" "devel" "release2")
-  BRANCH_DRAGONPILOT=("-" "0.6.5-zhs" "0.6.5-zht" "0.6.5-en" "devel-zhs" "devel-zht" "devel-en" )
+  BRANCH_DRAGONPILOT=("-" "0.6.6-zhs" "0.6.6-zht" "0.6.6-en" "0.6.5-zhs" "0.6.5-zht" "0.6.5-en" "devel-zhs" "devel-zht" "devel-en" )
   BRANCH_KEGMAN=("-" "kegman-0.6.6" "kegman-plusBoschGasPress-0.6.6" "kegman-0.6.5" "kegman-plusBoschGasPress-0.6.5")
   BRANCH_ARNE182=("-" "release3")
   BRANCH_OPENPILOTCN=("-" "latest-zhs" "0.6.6-zhs" "0.6.5-zhs" "devel")
